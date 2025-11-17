@@ -1,0 +1,44 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter an array size :");
+		int[] arr = new int[sc.nextInt()];
+		
+		for(int i = 0; i <= arr.length-1; i++) {
+			System.out.println("Enter "+i+" index of an array element");
+			arr[i] = sc.nextInt();
+			
+		}
+		System.out.println("=======================");
+		for(;;) {
+		
+			System.out.println("Bubble Sort Array :"+Arrays.toString(isSort(arr)));
+			break;
+			
+		}
+    }
+    
+   
+	
+//	bubble sort in Array
+	public static int[] isSort(int[] arr) {
+		int[] narr = new int[arr.length];
+		for(int i = 0; i <= arr.length-1; i++) {
+			for(int j = 0; j < arr.length-1; j++) {
+				if(arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+	
+
+}
